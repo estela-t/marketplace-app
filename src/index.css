@@ -17,3 +17,34 @@
 img {
   max-width: 100%;
 }
+
+button {
+  @apply bg-primaryAccent;
+  @apply rounded;
+  @apply text-sm;
+  @apply font-medium;
+  @apply transitionMain;
+  color: white;
+  letter-spacing: 2%;
+}
+
+button:hover,
+button:focus {
+  @apply bg-primaryHover;
+}
+
+button,
+input {
+  padding: 12px 24px;
+}
+input {
+  @apply rounded;
+  @apply bg-greyLight;
+  border: 1px solid transparent;
+  @apply transitionMain;
+}
+
+input:focus {
+  outline: none;
+  @apply border-primaryAccent;
+}
