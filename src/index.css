@@ -18,7 +18,7 @@ img {
   max-width: 100%;
 }
 
-button {
+button.primary {
   @apply bg-primaryAccent;
   @apply rounded;
   @apply text-sm;
@@ -28,12 +28,12 @@ button {
   letter-spacing: 2%;
 }
 
-button:hover,
-button:focus {
+button.primary:hover,
+button.primary:focus {
   @apply bg-primaryHover;
 }
 
-button,
+button.primary,
 input {
   padding: 12px 24px;
 }
@@ -47,4 +47,10 @@ input {
 input:focus {
   outline: none;
   @apply border-primaryAccent;
+}
+
+button.reset {
+  @apply text-primaryAccent;
+  /* @apply font-; */
+  @apply text-lg;
 }

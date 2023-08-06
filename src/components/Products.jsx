@@ -1,18 +1,41 @@
+import { useEffect, useState } from 'react'
 import Product from './Product'
 import SearchForm from './SearchForm'
 import useMockFetch from '../hooks/useMockFetch'
 
 const Products = () => {
-  const { data: products, isLoading, isSuccess, error } = useMockFetch('api/products')
+  const [products, setProducts] = useState()
+  const [filtered, setFiltered] = useState(false)
+  const { data: productList, status } = useMockFetch('api/products')
 
-  console.log(products)
+  const handleSearch = (query) => {
+    setFiltered(true)
+    filterProducts(query)
+  }
+
+  const filterProducts = (query) => {
+    setFiltered(true)
+    const filteredProducts = productList.filter((product) => product.product.toLowerCase().includes(query.toLowerCase()))
+    setProducts(filteredProducts)
+  }
+
+  const handleClear = () => {
+    setFiltered(false)
+    setProducts(productList)
+  }
+
+  useEffect(() => {
+    if (status === 'success') {
+      setProducts(productList)
+    }
+  }, [status])
 
   return (
     <>
-      <SearchForm />
-      {isLoading ? (
+      <SearchForm onSearch={handleSearch} onClear={handleClear} />
+      {status === 'fetching' ? (
         <>Getting products...</>
-      ) : isSuccess ? (
+      ) : products !== undefined ? (
         <ul className="grid grid-cols-1 gap-x-4 gap-y-6 place-items-center sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 lg:gap-x-6">
           {products.map((product) => (
             <li key={product.id} className="col-span-1 max-w-[360px]">
@@ -23,6 +46,7 @@ const Products = () => {
       ) : (
         <>No Products available</>
       )}
+      {filtered && products.length === 0 && <>No matching products were found.</>}
     </>
   )
 }

@@ -11,6 +11,7 @@ export default {
       grey: '#595959',
       greyDark: '#191919',
       greyLight: '#F9F9FB',
+      error: '#CC0000',
     },
     extend: {
       fontFamily: {
