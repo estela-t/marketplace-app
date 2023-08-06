@@ -34,19 +34,19 @@ const Products = () => {
     <>
       <SearchForm onSearch={handleSearch} onClear={handleClear} />
       {status === 'fetching' ? (
-        <>Getting products...</>
+        <p>Getting products...</p>
       ) : products !== undefined ? (
         <ul className="grid grid-cols-1 gap-x-4 gap-y-6 place-items-center sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 lg:gap-x-6">
           {products.map((product) => (
-            <li key={product.id} className="col-span-1 max-w-[360px]">
+            <li key={product.id} className="col-span-1 max-w-[360px] cursor-pointer">
               <Product product={product} />
             </li>
           ))}
         </ul>
       ) : (
-        <>No Products available</>
+        <p>No Products available</p>
       )}
-      {filtered && products.length === 0 && <>No matching products were found.</>}
+      {filtered && products.length === 0 && <p>No matching products were found.</p>}
     </>
   )
 }

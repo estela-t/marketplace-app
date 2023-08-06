@@ -51,6 +51,24 @@ input:focus {
 
 button.reset {
   @apply text-primaryAccent;
-  /* @apply font-; */
   @apply text-lg;
+}
+
+.body-text {
+  @apply font-nunito;
+  @apply text-xs;
+  line-height: 25px;
+}
+
+.bullet-list {
+  list-style: disc;
+  list-style-position: inside;
+}
+
+.inline-link {
+  @apply transitionMain;
+}
+
+.inline-link:hover {
+  @apply text-primaryAccent;
 }

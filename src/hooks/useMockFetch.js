@@ -17,10 +17,11 @@ const useMockFetch = (url) => {
           await Promise.resolve()
           await new Promise((resolve) => setTimeout(resolve, 700))
           setData(productsData)
-        } else if (url.startsWith('api/products/id')) {
+        } else if (url.startsWith('api/products/')) {
+          console.log('am i here')
           const productId = url.split('/')[2]
           const product = productsData.find((item) => item.id === parseInt(productId))
-          setData(product ? [product] : [])
+          setData(product ? product : {})
         } else {
           throw new Error('Invalid endpoint')
         }

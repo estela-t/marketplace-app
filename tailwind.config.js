@@ -12,11 +12,13 @@ export default {
       greyDark: '#191919',
       greyLight: '#F9F9FB',
       error: '#CC0000',
+      success: '#C1FFC1',
+      warning: '#FFDAB9',
     },
     extend: {
       fontFamily: {
         inter: ['Inter', 'sans-serif'],
-        nunito: ['Nunito Sans', 'sans-serif'],
+        nunito: ['"Nunito Sans"', 'sans-serif'],
       },
       fontSize: {
         xs: '0.75rem', // 12px (product desc)
@@ -24,7 +26,7 @@ export default {
         base: '1rem', // 16px (body + h3)
         lg: '1.25rem', // 20px (h2)
         xl: '1.75rem', // 28px (h1 mobile)
-        '2xl': '2rem', // 32px (h1 desktop)
+        '2xl': '2.5rem', // 340px (h1 desktop)
       },
     },
   },
@@ -52,17 +54,12 @@ export default {
           },
           h2: {
             color: theme('colors.greyDark'),
-            fontFamily: theme('fontFamily.inter'),
+            fontFamily: theme('fontFamily.nunito'),
             fontSize: theme('fontSize.base'),
             fontWeight: '700',
+            lineHeight: '20px',
           },
         })
     }),
   ],
 }
-
-// nunito 600
-// nunito 700
-// inter 400
-// inter 500
-// inter 700
