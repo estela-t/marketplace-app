@@ -14,6 +14,7 @@ export default {
       error: '#CC0000',
       success: '#C1FFC1',
       warning: '#FFDAB9',
+      white: '#FFF',
     },
     extend: {
       fontFamily: {
@@ -23,8 +24,8 @@ export default {
       fontSize: {
         xs: '0.75rem', // 12px (product desc)
         sm: '0.875rem', // 14px (buttons)
-        base: '1rem', // 16px (body + h3)
-        lg: '1.25rem', // 20px (h2)
+        base: '1rem', // 16px (body + h2)
+        lg: '1.25rem', // 20px (h2 in dialog)
         xl: '1.75rem', // 28px (h1 mobile)
         '2xl': '2.5rem', // 340px (h1 desktop)
       },
@@ -38,8 +39,11 @@ export default {
           maxWidth: '1400px',
           margin: '0 auto',
         },
-        '.transitionMain': {
+        '.transition-main': {
           transition: 'all 0.2s cubic-bezier(0.6,0.04,0.3,1)',
+        },
+        '.shadow-main': {
+          boxShadow: '0px 10px 14px -4px #0000001F, 0px 16px 40px 0px #00000014, 0px 18px 56px 20px #0000000D',
         },
       }),
         addBase({

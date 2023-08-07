@@ -1,7 +1,7 @@
 import { useForm } from 'react-hook-form'
 
 const SearchForm = ({ onSearch, onClear }) => {
-  // utilizing the react hook form library as its a great lib for very easily handling form state & errors. It's super lightweight too!
+  // utilizing the react hook form library as it's a great lib for very easily handling form state & errors. It's super lightweight too!
   const { register, handleSubmit, formState, reset } = useForm()
   const searchRegex = /^[a-zA-Z0-9\s]+$/
 

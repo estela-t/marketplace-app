@@ -7,17 +7,16 @@ import placeholder from '../assets/placeholder.jpeg'
 const ProductPage = () => {
   const { productId } = useParams()
   const [product, setProduct] = useState()
+
+  // I considered passing the product details from the parent component, but wanted the user to be able to copy and paste the url and be taken to the product, so settled on adding an endpoint for getting a single product
   const { data, status } = useMockFetch(`api/products/${productId}`)
 
+  // once we have data back from api, set on state
   useEffect(() => {
     if (status === 'success') {
       setProduct(data)
     }
   }, [status])
-
-  useEffect(() => {
-    console.log(product)
-  }, [product])
 
   return (
     <>

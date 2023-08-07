@@ -18,14 +18,23 @@ img {
   max-width: 100%;
 }
 
-button.primary {
-  @apply bg-primaryAccent;
+button.primary,
+button.secondary {
   @apply rounded;
   @apply text-sm;
   @apply font-medium;
-  @apply transitionMain;
+  @apply transition-main;
+  letter-spacing: 0.3px;
+}
+
+button.primary {
+  @apply bg-primaryAccent;
   color: white;
-  letter-spacing: 2%;
+}
+
+button.secondary {
+  @apply bg-greyLight;
+  color: black;
 }
 
 button.primary:hover,
@@ -33,7 +42,13 @@ button.primary:focus {
   @apply bg-primaryHover;
 }
 
+button.secondary:hover,
+button.secondary:focus {
+  @apply text-primaryAccent;
+}
+
 button.primary,
+button.secondary,
 input {
   padding: 12px 24px;
 }
@@ -41,7 +56,7 @@ input {
   @apply rounded;
   @apply bg-greyLight;
   border: 1px solid transparent;
-  @apply transitionMain;
+  @apply transition-main;
 }
 
 input:focus {
@@ -66,7 +81,7 @@ button.reset {
 }
 
 .inline-link {
-  @apply transitionMain;
+  @apply transition-main;
 }
 
 .inline-link:hover {

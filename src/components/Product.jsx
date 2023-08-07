@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom'
 import QuantityChip from './QuantityChip'
 import placeholder from '../assets/placeholder.jpeg'
 
-const Product = ({ product }) => {
+const Product = ({ product, onSelect, isSelected }) => {
   return (
     <>
       <Link to={`/products/${product.id}`}>
@@ -18,6 +18,12 @@ const Product = ({ product }) => {
           <QuantityChip quantity={product.quantity} />
         </div>
       </Link>
+      <div className="mt-3">
+        <input type="checkbox" id={product.id} onChange={(e) => onSelect(e)} checked={isSelected} />
+        <label htmlFor={product.id} className="text-sm ml-1">
+          Compare
+        </label>
+      </div>
     </>
   )
 }
