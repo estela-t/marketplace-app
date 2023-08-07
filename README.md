@@ -4,10 +4,10 @@ A simple app that allows a user to view some products, search them, view the det
 
 Uses the vite-react template:
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
+- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md)
 
-## To run locally:
+## To run locally
 
 - have Node installed (recommended v18.15.0^)
-- run npm i
-- run npm run dev
+- run `npm i`
+- run `npm run dev`
